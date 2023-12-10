@@ -2,7 +2,6 @@ package br.com.agenda.factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class ConnectionFactory {
 	
@@ -22,6 +21,15 @@ public class ConnectionFactory {
 		
 		Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
 		return connection;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		Connection con = createConnectionToMySQL();
+		
+		if(con!=null) {
+			System.out.println("Conexao obtida com sucesso");
+			con.close();
+		}
 	}
 
 }
