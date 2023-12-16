@@ -9,15 +9,18 @@ public class ConnectionFactory {
 	private static final String USERNAME = "root";
 	
 	//senha do banco
-	private static final String PASSWORD = "";
+	private static final String PASSWORD = "admin";
 	
 	//caminho do banco de dados
 	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/agenda";
+	//"jdbc:mysql://127.0.0.1:3306/dbagenda?userTimezone=true&serverTimezone=UTC";
+	
+	private String driver = "com.mysql.cj.jdbc.Driver";
 	
 	//conectando com o banco
 	public static Connection createConnectionToMySQL() throws Exception {
 		
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 		Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
 		return connection;
