@@ -16,12 +16,23 @@ public class Main {
 		
 		ContatoDAO contatoDao = new ContatoDAO();
 		
-		Contato contato = new Contato();
-		contato.setNome("Renan");
-		contato.setIdade(89);
+		//Contato contato = new Contato();
+		//contato.setNome("Renan");
+		//contato.setIdade(89);
 		
 		
-		contatoDao.save(contato);
+		//contatoDao.save(contato);
+		
+		
+		//aula 06
+		Contato c1 = new Contato();
+		
+		c1.setNome("Jaime silva");
+		c1.setIdade(56);
+		c1.setId(1);//substituindo o ID 
+		
+		contatoDao.update(c1);
+		
 		
 		//aula 05 - visualizacao dos dados
 		
