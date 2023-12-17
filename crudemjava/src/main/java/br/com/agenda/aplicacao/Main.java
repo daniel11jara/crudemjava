@@ -31,7 +31,10 @@ public class Main {
 		c1.setIdade(56);
 		c1.setId(1);//substituindo o ID 
 		
-		contatoDao.update(c1);
+		//contatoDao.update(c1);
+		
+		//aula 07- deletar
+		contatoDao.deleteById(2);
 		
 		
 		//aula 05 - visualizacao dos dados

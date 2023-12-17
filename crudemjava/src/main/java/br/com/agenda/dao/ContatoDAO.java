@@ -53,6 +53,40 @@ public class ContatoDAO {
 		}
 	}
 	
+	//aula 07
+	public void deleteById(int id) {
+		String sql = "delete from contatos where id = ?";	
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			
+			conn = ConnectionFactory.createConnectionToMySQL();
+			
+			pstm = conn.prepareStatement(sql);
+			
+			pstm.setInt(1, id);
+			
+			pstm.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (pstm!=null) {
+					pstm.close();
+				}
+				
+				if (conn!=null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
 	//aula 05
 	public void update(Contato contatos) {
 		String sql = "update contatos set nome = ?, idade = ? " + "where id = ?";
